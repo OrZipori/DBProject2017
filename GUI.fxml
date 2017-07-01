@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="115.0" minWidth="600.0" prefHeight="533.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUIController">
+   <children>
+      <TabPane prefHeight="541.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Queries">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Pane prefHeight="48.0" prefWidth="1000.0">
+                           <children>
+                              <Label layoutX="320.0" layoutY="6.0" text="Database Project 2017 GUI" textFill="#a11d1d">
+                                 <font>
+                                    <Font name="System Bold" size="26.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <effect>
+                              <DropShadow blurType="TWO_PASS_BOX" color="#221f1f85" height="25.75" offsetY="2.0" radius="5.9375" spread="0.56" width="0.0" />
+                           </effect>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                        </Pane>
+                        <Pane prefHeight="133.0" prefWidth="1000.0">
+                           <children>
+                              <Label layoutX="197.0" layoutY="64.0" prefHeight="27.0" prefWidth="53.0" text="DML" textAlignment="CENTER" textFill="#b92424" underline="true">
+                                 <font>
+                                    <Font name="Arial Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="717.0" layoutY="58.0" text="DDL" textAlignment="CENTER" textFill="#b92424" underline="true">
+                                 <font>
+                                    <Font name="Arial" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        
+                        <HBox prefHeight="336.0" prefWidth="1000.0">
+                           <children>
+                              <VBox fx:id="DML" prefHeight="370.0" prefWidth="481.0">
+                                 <children>
+                                    <Label fx:id="label_query" text="Query :">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextArea fx:id="queryDML" prefHeight="87.0" prefWidth="481.0" />
+                                    <HBox prefHeight="22.0" prefWidth="482.0" />
+                                    <HBox prefHeight="100.0" prefWidth="482.0">
+                                       <children>
+                                          <Pane prefHeight="38.0" prefWidth="486.0">
+                                             <children>
+                                                <Button fx:id="buttonScriptDML" layoutX="108.0" layoutY="5.0" mnemonicParsing="false" onAction="#executeDMLScript" text="Run script" />
+                                                <Button fx:id="buttonSubmitDML" layoutY="5.0" mnemonicParsing="false" onAction="#sendQueryDML" text="Submit query" />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </HBox>
+                                    <Label text="Results :" />
+                                    <TextArea fx:id="responseDML" prefHeight="225.0" prefWidth="482.0">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </TextArea>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <Separator orientation="VERTICAL" prefHeight="200.0" style="-fx-background-color: #000;" /> 
+                              
+                              <VBox fx:id="DDL" prefHeight="372.0" prefWidth="484.0">
+                                 <children>
+                                    <Label fx:id="label_query1" text="Query :">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextArea fx:id="queryDDL" prefHeight="53.0" prefWidth="485.0" />
+                                    <HBox prefHeight="24.0" prefWidth="485.0">
+                                       <children>
+                                          <Button fx:id="buttonSubmitDDL" mnemonicParsing="false" onAction="#sendQueryDDL" text="Submit query" />
+                                          <Pane HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Button fx:id="buttonScriptDDL" layoutX="3.0" mnemonicParsing="false" onAction="#executeDDLScript" text="Run script" />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <Label text="Results :" />
+                                    <TextArea fx:id="responseDDL" prefHeight="181.0" prefWidth="485.0">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </TextArea>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="5.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </content>
+          </Tab>
+          <Tab text="Simple Query ">
+               <content>
+                  <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="115.0" minWidth="600.0" prefHeight="533.0" prefWidth="1000.0">
+                     <children>
+                        <Pane prefHeight="88.0" prefWidth="1000.0">
+                           <children>
+                              <Label layoutX="340.0" layoutY="10.0" text="Simple Query GUI" textFill="#cd0909">
+                                 <font>
+                                    <Font name="Arial Bold" size="35.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="727.0" layoutY="53.0" text="Results :" textFill="#bf3939">
+                                 <font>
+                                    <Font name="Arial" size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="253.0" layoutY="54.0" text="Attributes :" textFill="#bc3939">
+                                 <font>
+                                    <Font name="Arial Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="3.0" layoutY="54.0" text="Tables :" textFill="#b23030">
+                                 <font>
+                                    <Font name="Arial Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <HBox prefHeight="392.0" prefWidth="1000.0">
+                           <children>
+                              <VBox fx:id="tablesBox" alignment="TOP_CENTER" prefHeight="255.0" prefWidth="247.0" style="-fx-background-color: #b74f4f;" />
+                              <VBox fx:id="attributesBox" alignment="TOP_CENTER" prefHeight="223.0" prefWidth="260.0" style="-fx-background-color: #dc5f5f;" />
+                              <TextArea fx:id="results" prefHeight="304.0" prefWidth="492.0" />
+                           </children>
+                        </HBox>
+                        <Pane prefHeight="51.0" prefWidth="1000.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="11.0" text="Where Condition :">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="whereText" layoutX="168.0" layoutY="8.0" prefHeight="27.0" prefWidth="339.0" />
+                              <Button fx:id="executeButton" layoutX="524.0" layoutY="7.0" mnemonicParsing="false" onAction="#executeSQ" prefHeight="27.0" prefWidth="163.0" text="Execute" textFill="#e84545">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </Pane>
+                     </children>
+                  </VBox>
+               </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</VBox>
